@@ -1,0 +1,51 @@
+basePath: /api/v1
+definitions:
+  controllers.NotificationDto:
+    properties:
+      message:
+        type: string
+      serviceName:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Go Notification API
+  title: Go Notification API
+  version: "1.0"
+paths:
+  /notification:
+    post:
+      consumes:
+      - application/json
+      description: Add a new notification
+      parameters:
+      - description: Notification object
+        in: body
+        name: notification
+        required: true
+        schema:
+          $ref: '#/definitions/controllers.NotificationDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Notification sent successfully
+          schema:
+            type: string
+      summary: Add a new notification
+      tags:
+      - notification
+  /notification/healthz:
+    get:
+      description: Check if the service is healthy
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Go Notification API is healthy
+          schema:
+            type: string
+      summary: Health check
+      tags:
+      - healthz
+swagger: "2.0"
