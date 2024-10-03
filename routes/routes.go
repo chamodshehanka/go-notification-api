@@ -11,7 +11,7 @@ func SetupRoutes(r *gin.Engine) {
 	v1 := r.Group("/api/v1")
 	{
 		notification := v1.Group("/notification")
-		notification.PUT("", controllers.AddNotification)
+		notification.POST("", controllers.AddNotification)
 		notification.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 		notification.GET("/healthz", controllers.Healthz)
 	}
