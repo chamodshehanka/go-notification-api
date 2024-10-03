@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	_ "github.com/chamodshehanka/go-notification-api/docs"
 	"github.com/chamodshehanka/go-notification-api/internal/configs"
 	"github.com/chamodshehanka/go-notification-api/middlewares"
 	"github.com/chamodshehanka/go-notification-api/routes"
@@ -11,10 +12,9 @@ import (
 	"syscall"
 )
 
-//	@title			Go Notification API
-//	@version		1.0
-//	@description	Go Notification API
-//
+// @title			Go Notification API
+// @version		1.0
+// @description	Go Notification API
 // @BasePath	/api/v1
 func main() {
 	r := gin.New()

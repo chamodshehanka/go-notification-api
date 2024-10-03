@@ -13,6 +13,8 @@ func (i *InAppNotifier) SendNotification(message string) error {
 	clientID := configs.GetConfig().NotificationAPIConfig.ClientID
 	clientSecret := configs.GetConfig().NotificationAPIConfig.ClientSecret
 
+	notificationID := "new_follow"
+
 	err := notificationapi.Init(clientID, clientSecret)
 	if err != nil {
 		return err
@@ -20,19 +22,18 @@ func (i *InAppNotifier) SendNotification(message string) error {
 
 	//mergeTags is to pass dynamic values into the notification design.
 	mergeTags := make(map[string]interface{}) // Change to map[string]interface{}
-	mergeTags["item"] = "Krabby Patty Burger"
-	mergeTags["address"] = "124 Conch Street"
-	mergeTags["orderId"] = "1234567890"
+	mergeTags["comment"] = "Build something great :)"
+	mergeTags["commentId"] = "commentId-1234-abcd-wxyz"
 
 	err = notificationapi.Send(
 		notificationapi.SendRequest{
 			//The ID of the notification you wish to send. You can find this
 			//value from the dashboard.
-			NotificationId: "order_tracking",
+			NotificationId: notificationID,
 			//The user to send the notification to.
 			User: notificationapi.User{
-				Id:    "spongebob.squarepants",
-				Email: "spongebob@squarepants.com",
+				Id:    "chamodshehanka",
+				Email: "hcsperera@gmail.com",
 			},
 			MergeTags: mergeTags,
 		},

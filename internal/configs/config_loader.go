@@ -13,7 +13,7 @@ var config Config
 var requiredEnvs = [...]string{
 	// Server
 	"PORT",
-	"API_KEY",
+	//"API_KEY",
 
 	// Notification API
 	"NOTIFICATION_API_CLIENT_ID",
