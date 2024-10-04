@@ -9,4 +9,5 @@ type Config struct {
 	Port                  string
 	APIKey                string
 	NotificationAPIConfig NotificationAPIConfig
+	KnockAPIKey           string
 }
