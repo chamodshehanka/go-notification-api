@@ -18,6 +18,9 @@ var requiredEnvs = [...]string{
 	// Notification API
 	"NOTIFICATION_API_CLIENT_ID",
 	"NOTIFICATION_API_CLIENT_SECRET",
+
+	// Knock API
+	"KNOCK_API_KEY",
 }
 
 func init() {
